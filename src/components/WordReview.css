@@ -1,0 +1,102 @@
+/* src/components/WordReview.css */
+
+.word-review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    /* Light background to enhance visibility */
+    border: 1px solid #ccc;
+    /* Subtle border */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Padding for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Light shadow */
+}
+
+.word {
+    margin-bottom: 10px;
+    font-size: 24px;
+    /* Larger font for better readability */
+    color: #333;
+    /* Darker text color */
+}
+
+.translation {
+    margin-bottom: 15px;
+    font-size: 18px;
+    /* Slightly smaller */
+    color: #666;
+    /* Lighter color for translation */
+}
+
+.input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 220px;
+    /* Increased width for input */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    /* Slightly larger font size */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #0072a1;
+}
+
+.result {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #28a745;
+    /* Color for result text */
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    /* Background for the progress bar */
+    border-radius: 4px;
+    height: 20px;
+    /* Height for the progress bar */
+    margin-bottom: 15px;
+    /* Space between progress and word */
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    /* Green color for progress */
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    /* Smooth transition for progress */
+}
+
+.no-words {
+    font-size: 20px;
+    /* Slightly larger for emphasis */
+    color: #ff6347;
+    /* Warning color */
+    margin-top: 20px;
+    /* Margin for spacing */
+}
+
+.hint {
+    color: red;
+    /* Make the hint message visually distinct */
+    margin-top: 10px;
+}
