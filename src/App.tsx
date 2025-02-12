@@ -5,6 +5,7 @@ import WordReview from './components/WordReview';
 import './App.css'; // You can have global styles here
 import KanjiList from './components/KanjiList';
 import EditKanji from './components/EditKanji';
+import CreateKanji from './components/CreateKanji';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
           <Route path="/" element={<KanjiList />} />
           <Route path="/review/:kanji" element={<WordReview />} />
           <Route path="/kanji/:id/edit" element={<EditKanji />} />
+          <Route path='/kanji' element={<CreateKanji />} />
         </Routes>
       </div>
     </Router>

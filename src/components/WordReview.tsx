@@ -28,15 +28,17 @@ const WordReview: React.FC = () => {
             const words = await fetch(`http://localhost:3000/kanji/${kanji}/review`)
                 .then(res => res.json());
 
-            const newWords = words.words.map((x: any) => ({
+            const newWords: Word[] = words.words.map((x: any) => ({
                 word: x.value,
                 reading: x.reading,
                 translation: x.translation
             }));
 
+            newWords.sort(() => Math.random() - 0.5);
+
             setTotalWords(newWords.length);
 
-            setCurrentWord(newWords.shift());
+            setCurrentWord(newWords.shift()!);
             setWords(newWords);
         }
 
@@ -50,7 +52,7 @@ const WordReview: React.FC = () => {
         }
 
         // Check if the user's answer is correct
-        if (userReading.trim() !== currentWord!.reading) {
+        if (wanakana.toHiragana(userReading.trim()) !== currentWord!.reading) {
             setIsAllCorrect(false);
             setHint(`Incorrect! Correct answer: ${currentWord?.reading}`);
             setIsCurrentIncorrect(true);

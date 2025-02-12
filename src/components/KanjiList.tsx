@@ -44,6 +44,15 @@ const KanjiList: React.FC = () => {
         navigate(`/kanji/${kanji}/edit`);
     };
 
+    const handleDeleteClick = (e: React.MouseEvent, kanji: string) => {
+        e.stopPropagation();
+        fetch(`http://localhost:3000/kanji/${kanji}`, {
+            method: "DELETE",
+        });
+
+        setKanjis(kanjis.filter(x => x.id !== kanji));
+    };
+
     return (
         <div className="kanji-list">
             {kanjis.map((kanji) => {
@@ -54,7 +63,10 @@ const KanjiList: React.FC = () => {
                     className={`kanji-card ${isReviewable ? 'clickable' : 'not-clickable'}`}
                     key={kanji.id} onClick={() => isReviewable && handleCardClick(kanji.id)}>
                     <h2>{kanji.character}</h2>
-                    <button className="edit-button" onClick={(e) => handleEditClick(e, kanji.id)}>Edit</button>
+                    <div>
+                        <button className="edit-button" onClick={(e) => handleEditClick(e, kanji.id)}>Edit</button>
+                        <button className='delete-button' onClick={(e) => handleDeleteClick(e, kanji.id)}>Delete</button>
+                    </div>
                 </div>);
             })}
         </div>
